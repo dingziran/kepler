@@ -28,6 +28,11 @@ object Application extends Controller with MongoController {
   def demoCreate=Action{
     Ok(views.html.demo.create())
   }
+
+  def demoLogin=Action{
+    Ok(views.html.demo.login())
+  }
+
   def list( collection: String)=TODO
   def find(collection: String, id: String)=TODO
   def create(collection: String)=TODO

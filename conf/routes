@@ -5,7 +5,8 @@
 # Home page
 GET     /                           controllers.Application.index
 GET     /demo/list                  controllers.Application.demoList
-GET     /demo/create                  controllers.Application.demoCreate
+GET     /demo/create                controllers.Application.demoCreate
+GET     /demo/login                 controllers.Application.demoLogin
 # DB Restful API
 GET     /db/:collection            controllers.Application.list(collection: String)
 GET     /db/:collection/:id        controllers.Application.find(collection: String, id:String)
