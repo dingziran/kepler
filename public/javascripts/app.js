@@ -1,9 +1,16 @@
-var app=angular.module("myApp",[]);
+var app=angular.module("myApp",['ngRoute']);
 app.config(function($httpProvider) {
     //Enable cross domain calls
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
+app.config(['$routeProvider',function($routeProvider){
+    $routeProvider
+        .when('/',{
+            controller: 'MyController',
+            template: '<h2>Route</h2>'
+        });
+}]);
 app.directive('myDirective',function(){
     return {
         scope:{

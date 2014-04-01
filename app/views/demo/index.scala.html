@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Main Page</title>
+    <script src="/assets/javascripts/angular.js"> </script>
+    <script sre="/assets/javascripts/angular-route.js"></script>
+    <script src="/assets/javascripts/angular-resource.js" type="text/javascript"> </script>
+
+</head>
+<body>
+<div>
+    <div >
+        <h2>本例使用ng-form,form validate,ng-show演示如何登录</h2>
+        <form name="signup_form" ng-submit="submitForm()" ng-controller="FormController" novalidate>
+            <div ng-repeat="field in fields" ng-form="signup_form_input">
+                <input type="text" name="dynamic_input" ng-required="field.isRequired" ng-model="field.name" placeholder="{{field.placeholder}}" />
+                <div ng-show="signup_form_input.dynamic_input.$dirty && signup_form_input.dynamic_input.$invalid">
+                    <span class="error" ng-show="signup_form_input.dynamic_input.$error.required">
+                        The field is required.
+                    </span>
+                </div>
+            </div>
+            <button type="submit" ng-disabled="signup_form.$invalid">
+                Submit All
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="/assets/javascripts/app.js"></script>
+<script src="/assets/javascripts/demo/controllers.js"></script>
+</body>
+</html>

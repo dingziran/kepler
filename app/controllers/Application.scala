@@ -18,7 +18,7 @@ object Application extends Controller with MongoController {
   def collection: JSONCollection = db.collection[JSONCollection]("activities")
 
   def index = Action {
-    Ok(views.html.index())
+    Ok(views.html.home())
   }
 
   def demoList=Action{
@@ -31,6 +31,10 @@ object Application extends Controller with MongoController {
 
   def demoLogin=Action{
     Ok(views.html.demo.login())
+  }
+
+  def demoIndex=Action{
+    Ok(views.html.demo.index())
   }
 
   def list( collection: String)=TODO
