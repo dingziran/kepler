@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-    <title></title>
-
+    <title>Angular JS Demo Application</title>
     <script src="/assets/javascripts/angular.js"> </script>
-    <script sre="/assets/javascripts/angular-route.js"></script>
+    <script src="/assets/javascripts/angular-route.js"></script>
     <script src="/assets/javascripts/angular-resource.js"></script>
     <script src="/assets/javascripts/app.js"></script>
+    <script src="/assets/javascripts/demo/controllers.js"></script>
 </head>
 <body>
+    <h1>Kepler</h1><h3> a demo application for Angular JS</h3>
+    <ul ng-controller="HomeController">
+        <li ng-click="create()">Create a object</li>
+        <li ng-click="list()">Read objects</li>
+        <li ng-click="login()">Login Demo</li>
+    </ul>
     <div ng-view></div>
-
 </body>
 </html>

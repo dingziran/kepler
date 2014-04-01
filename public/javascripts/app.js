@@ -7,21 +7,39 @@ app.config(function($httpProvider) {
 app.config(['$routeProvider',function($routeProvider){
     $routeProvider
         .when('/',{
-            controller: 'MyController',
-            template: '<h2>Route</h2>'
-        });
+            template: ''
+        })
+        .when('/create',{
+            controller: 'CreateController',
+            templateUrl: '/assets/views/create.html'
+        })
+        .when('/list',{
+            controller: 'ListController',
+            templateUrl:'/assets/views/list.html'
+        })
+        .when('/login',{
+            controller: 'LoginController',
+            templateUrl:'/assets/views/login.html'
+        })
+
+        .otherwise({redirectTo: '/'});
 }]);
-app.directive('myDirective',function(){
-    return {
-        scope:{
-            myUrl: '@',
-            myLinkText: '@'
-        },
-        restrict: 'A',
-        replace:true,
-        template: '<a href="{{myUrl}}">'+'{{myLinkText}}</a>'
-    }
+app.controller('HomeController',function($scope,$location){
+    $scope.create=function(){$location.path('/create')};
+    $scope.list=function(){$location.path('/list')};
+    $scope.login=function(){$location.path('/login')};
 });
+
+
+
+
+
+
+
+
+
+
+//below is legacy code and don't pay any attention to them
 app.controller('MyController',function($scope,$http,$parse,$interpolate){
     $scope.counter=0;
     $scope.name="World";
@@ -46,4 +64,15 @@ app.controller('MyController',function($scope,$http,$parse,$interpolate){
             $scope.previewText=template({to: $scope.to});
         }
     });
+});
+app.directive('myDirective',function(){
+    return {
+        scope:{
+            myUrl: '@',
+            myLinkText: '@'
+        },
+        restrict: 'A',
+        replace:true,
+        template: '<a href="{{myUrl}}">'+'{{myLinkText}}</a>'
+    }
 });

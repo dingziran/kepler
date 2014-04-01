@@ -28,7 +28,7 @@ app.controller('CreateController',function($scope,$http){
     };
 });
 
-app.controller('FormController',function($scope){
+app.controller('LoginController',function($scope){
     $scope.fields = [
         {placeholder: 'Username', isRequired: true},
         {placeholder: 'Password', isRequired: true},

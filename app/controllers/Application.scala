@@ -21,21 +21,6 @@ object Application extends Controller with MongoController {
     Ok(views.html.home())
   }
 
-  def demoList=Action{
-    Ok(views.html.demo.list())
-  }
-
-  def demoCreate=Action{
-    Ok(views.html.demo.create())
-  }
-
-  def demoLogin=Action{
-    Ok(views.html.demo.login())
-  }
-
-  def demoIndex=Action{
-    Ok(views.html.demo.index())
-  }
 
   def list( collection: String)=TODO
   def find(collection: String, id: String)=TODO
